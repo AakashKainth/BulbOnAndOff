@@ -1,20 +1,38 @@
 <!DOCTYPE html>
 <html>
 <body>
+<h1>JavaScript Arrays</h1>
+<h2>The sort() Method</h2>
 
-<img id="myImage" onclick="changeImage()" src= "images/pic_bulboff.gif" width="100" height="180">
+<p>Sort car objects on age:</p>
 
-<p>Click the light bulb to turn on/off the light.</p>
+<p id="demo"></p>
 
 <script>
-function changeImage() {
-  var image = document.getElementById('myImage');
-  if (image.src.match("bulbon")) {
-    image.src = "images/pic_bulboff.gif";
-  } else {
-    image.src = "images/pic_bulbon.gif";
-  }
+const cars = [
+  {type:"Volvo", year:2016},
+  {type:"Saab", year:2001},
+  {type:"BMW", year:2010}
+];
+
+displayCars();
+
+cars.sort(function(a, b){return a.year - b.year});
+displayCars();
+
+function displayCars() {
+  document.getElementById("demo").innerHTML =
+  cars[0].type + " " + cars[0].year + "<br>" +
+  cars[1].type + " " + cars[1].year + "<br>" +
+  cars[2].type + " " + cars[2].year;
 }
+function factorial(n){
+    for (n=1; n<=10; n++ ){
+        return n * (factorial -1);
+    }
+}
+
+
 </script>
 
 </body>
